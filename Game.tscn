@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Pieces/Piece Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=3]
+[ext_resource path="res://Assets/music1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://UI/Music.gd" type="Script" id=5]
 
 [node name="Game" type="Node2D"]
 
@@ -27,3 +29,9 @@ __meta__ = {
 margin_right = 576.0
 margin_bottom = 20.0
 text = "Score: "
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[connection signal="finished" from="Music" to="Music" method="_on_Music_finished"]
