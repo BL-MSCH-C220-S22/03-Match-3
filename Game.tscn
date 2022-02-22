@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Grid/grid.gd" type="Script" id=1]
 [ext_resource path="res://Pieces/Piece Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI/HUD.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Red.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Green.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Blue.wav" type="AudioStream" id=6]
 
 [node name="Game" type="Node2D"]
 
@@ -27,3 +30,14 @@ __meta__ = {
 margin_right = 576.0
 margin_bottom = 20.0
 text = "Score: "
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Red" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 4 )
+
+[node name="Green" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 5 )
+
+[node name="Blue" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )

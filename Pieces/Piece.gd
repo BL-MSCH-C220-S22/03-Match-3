@@ -29,4 +29,11 @@ func move_piece(change):
 	position = target_position
 
 func die():
+	var sound = get_node_or_null("/root/Game/Sounds/" + color)
+	if sound != null:
+		sound.playing = true
+	else:
+		sound = get_node_or_null("/root/Game/Sounds/Red")
+		if sound != null:
+			sound.playing = true
 	dying = true;
